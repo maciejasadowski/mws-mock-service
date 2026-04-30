@@ -1,0 +1,874 @@
+<wsdl:definitions name="MWSProcessServiceBasic" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://tempuri.org/Imports">
+			<xsd:import schemaLocation="http://de-mucfutprt1.apps.ce.capgemini.com:8011/mwsbasic?xsd=xsd0" namespace="http://tempuri.org/"/>
+			<xsd:import schemaLocation="http://de-mucfutprt1.apps.ce.capgemini.com:8011/mwsbasic?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+			<xsd:import schemaLocation="http://de-mucfutprt1.apps.ce.capgemini.com:8011/mwsbasic?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="IMWSProcessServiceBasic_Login_InputMessage">
+		<wsdl:part name="parameters" element="tns:Login"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Login_OutputMessage">
+		<wsdl:part name="parameters" element="tns:LoginResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Logout_InputMessage">
+		<wsdl:part name="parameters" element="tns:Logout"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Logout_OutputMessage">
+		<wsdl:part name="parameters" element="tns:LogoutResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Ping_InputMessage">
+		<wsdl:part name="parameters" element="tns:Ping"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Ping_OutputMessage">
+		<wsdl:part name="parameters" element="tns:PingResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_ClearCache_InputMessage">
+		<wsdl:part name="parameters" element="tns:ClearCache"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_ClearCache_OutputMessage">
+		<wsdl:part name="parameters" element="tns:ClearCacheResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Process_Create_InputMessage">
+		<wsdl:part name="parameters" element="tns:Process_Create"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Process_Create_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Process_CreateResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Process_GetList_InputMessage">
+		<wsdl:part name="parameters" element="tns:Process_GetList"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Process_GetList_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Process_GetListResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Process_Delete_InputMessage">
+		<wsdl:part name="parameters" element="tns:Process_Delete"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Process_Delete_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Process_DeleteResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Process_GetLastError_InputMessage">
+		<wsdl:part name="parameters" element="tns:Process_GetLastError"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Process_GetLastError_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Process_GetLastErrorResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Process_Start_InputMessage">
+		<wsdl:part name="parameters" element="tns:Process_Start"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Process_Start_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Process_StartResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Obj_GetStructure_InputMessage">
+		<wsdl:part name="parameters" element="tns:Obj_GetStructure"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Obj_GetStructure_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Obj_GetStructureResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Obj_Toggle_InputMessage">
+		<wsdl:part name="parameters" element="tns:Obj_Toggle"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Obj_Toggle_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Obj_ToggleResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Doc_GetFile_Mime_InputMessage">
+		<wsdl:part name="parameters" element="tns:Doc_GetFile_Mime"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Doc_GetFile_Mime_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Doc_GetFile_MimeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Doc_SetFile_Mime_InputMessage">
+		<wsdl:part name="parameters" element="tns:Doc_SetFile_Mime"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Doc_SetFile_Mime_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Doc_SetFile_MimeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Obj_SetStructure_InputMessage">
+		<wsdl:part name="parameters" element="tns:Obj_SetStructure"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Obj_SetStructure_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Obj_SetStructureResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Process_Close_InputMessage">
+		<wsdl:part name="parameters" element="tns:Process_Close"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Process_Close_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Process_CloseResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Process_GetInfo_InputMessage">
+		<wsdl:part name="parameters" element="tns:Process_GetInfo"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Process_GetInfo_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Process_GetInfoResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Process_GetTransDocsList_InputMessage">
+		<wsdl:part name="parameters" element="tns:Process_GetTransDocsList"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Process_GetTransDocsList_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Process_GetTransDocsListResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Process_Open_InputMessage">
+		<wsdl:part name="parameters" element="tns:Process_Open"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Process_Open_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Process_OpenResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Process_SetData_InputMessage">
+		<wsdl:part name="parameters" element="tns:Process_SetData"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Process_SetData_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Process_SetDataResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Process_Forward_InputMessage">
+		<wsdl:part name="parameters" element="tns:Process_Forward"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Process_Forward_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Process_ForwardResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetSystemList_InputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetSystemList"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetSystemList_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetSystemListResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetFolderContent_InputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetFolderContent"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetFolderContent_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetFolderContentResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetNavigList_InputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetNavigList"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetNavigList_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetNavigListResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetNavigTree_InputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetNavigTree"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetNavigTree_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetNavigTreeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetPrinters_InputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetPrinters"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetPrinters_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetPrintersResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetForms_InputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetForms"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetForms_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetFormsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetSystem_InputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetSystem"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetSystem_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetSystemResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetBinFile_Mime_InputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetBinFile_Mime"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetBinFile_Mime_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetBinFile_MimeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetLookupObjects_InputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetLookupObjects"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetLookupObjects_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetLookupObjectsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetLookupValue_InputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetLookupValue"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetLookupValue_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetLookupValueResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetValueHelpDefinition_InputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetValueHelpDefinition"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetValueHelpDefinition_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetValueHelpDefinitionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetDataProviderDefinition_InputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetDataProviderDefinition"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetDataProviderDefinition_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetDataProviderDefinitionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetItemInfo_InputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetItemInfo"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetItemInfo_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetItemInfoResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetItemDescription_InputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetItemDescription"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetItemDescription_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetItemDescriptionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_CreateItem_InputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_CreateItem"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_CreateItem_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_CreateItemResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_LockItem_InputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_LockItem"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_LockItem_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_LockItemResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_UnLockItem_InputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_UnLockItem"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_UnLockItem_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_UnLockItemResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_UpdateItemBlob_InputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_UpdateItemBlob"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_UpdateItemBlob_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_UpdateItemBlobResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_ReadItemBlob_InputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_ReadItemBlob"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_ReadItemBlob_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_ReadItemBlobResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_CreateVersion_InputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_CreateVersion"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_CreateVersion_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_CreateVersionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Srv_GetInfo_InputMessage">
+		<wsdl:part name="parameters" element="tns:Srv_GetInfo"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Srv_GetInfo_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Srv_GetInfoResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetWordTemplate_InputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetWordTemplate"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Rep_GetWordTemplate_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Rep_GetWordTemplateResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Usr_GetRoles_InputMessage">
+		<wsdl:part name="parameters" element="tns:Usr_GetRoles"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Usr_GetRoles_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Usr_GetRolesResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Usr_GetUsersOfRole_InputMessage">
+		<wsdl:part name="parameters" element="tns:Usr_GetUsersOfRole"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Usr_GetUsersOfRole_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Usr_GetUsersOfRoleResponse"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Usr_GetUsers_InputMessage">
+		<wsdl:part name="parameters" element="tns:Usr_GetUsers"/>
+	</wsdl:message>
+	<wsdl:message name="IMWSProcessServiceBasic_Usr_GetUsers_OutputMessage">
+		<wsdl:part name="parameters" element="tns:Usr_GetUsersResponse"/>
+	</wsdl:message>
+	<wsdl:portType name="IMWSProcessServiceBasic">
+		<wsdl:operation name="Login">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Login" message="tns:IMWSProcessServiceBasic_Login_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/LoginResponse" message="tns:IMWSProcessServiceBasic_Login_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Logout">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Logout" message="tns:IMWSProcessServiceBasic_Logout_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/LogoutResponse" message="tns:IMWSProcessServiceBasic_Logout_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Ping">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Ping" message="tns:IMWSProcessServiceBasic_Ping_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/PingResponse" message="tns:IMWSProcessServiceBasic_Ping_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="ClearCache">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/ClearCache" message="tns:IMWSProcessServiceBasic_ClearCache_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/ClearCacheResponse" message="tns:IMWSProcessServiceBasic_ClearCache_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Process_Create">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Process_Create" message="tns:IMWSProcessServiceBasic_Process_Create_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Process_CreateResponse" message="tns:IMWSProcessServiceBasic_Process_Create_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Process_GetList">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Process_GetList" message="tns:IMWSProcessServiceBasic_Process_GetList_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Process_GetListResponse" message="tns:IMWSProcessServiceBasic_Process_GetList_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Process_Delete">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Process_Delete" message="tns:IMWSProcessServiceBasic_Process_Delete_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Process_DeleteResponse" message="tns:IMWSProcessServiceBasic_Process_Delete_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Process_GetLastError">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Process_GetLastError" message="tns:IMWSProcessServiceBasic_Process_GetLastError_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Process_GetLastErrorResponse" message="tns:IMWSProcessServiceBasic_Process_GetLastError_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Process_Start">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Process_Start" message="tns:IMWSProcessServiceBasic_Process_Start_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Process_StartResponse" message="tns:IMWSProcessServiceBasic_Process_Start_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Obj_GetStructure">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Obj_GetStructure" message="tns:IMWSProcessServiceBasic_Obj_GetStructure_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Obj_GetStructureResponse" message="tns:IMWSProcessServiceBasic_Obj_GetStructure_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Obj_Toggle">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Obj_Toggle" message="tns:IMWSProcessServiceBasic_Obj_Toggle_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Obj_ToggleResponse" message="tns:IMWSProcessServiceBasic_Obj_Toggle_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Doc_GetFile_Mime">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Doc_GetFile_Mime" message="tns:IMWSProcessServiceBasic_Doc_GetFile_Mime_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Doc_GetFile_MimeResponse" message="tns:IMWSProcessServiceBasic_Doc_GetFile_Mime_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Doc_SetFile_Mime">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Doc_SetFile_Mime" message="tns:IMWSProcessServiceBasic_Doc_SetFile_Mime_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Doc_SetFile_MimeResponse" message="tns:IMWSProcessServiceBasic_Doc_SetFile_Mime_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Obj_SetStructure">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Obj_SetStructure" message="tns:IMWSProcessServiceBasic_Obj_SetStructure_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Obj_SetStructureResponse" message="tns:IMWSProcessServiceBasic_Obj_SetStructure_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Process_Close">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Process_Close" message="tns:IMWSProcessServiceBasic_Process_Close_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Process_CloseResponse" message="tns:IMWSProcessServiceBasic_Process_Close_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Process_GetInfo">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Process_GetInfo" message="tns:IMWSProcessServiceBasic_Process_GetInfo_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Process_GetInfoResponse" message="tns:IMWSProcessServiceBasic_Process_GetInfo_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Process_GetTransDocsList">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Process_GetTransDocsList" message="tns:IMWSProcessServiceBasic_Process_GetTransDocsList_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Process_GetTransDocsListResponse" message="tns:IMWSProcessServiceBasic_Process_GetTransDocsList_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Process_Open">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Process_Open" message="tns:IMWSProcessServiceBasic_Process_Open_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Process_OpenResponse" message="tns:IMWSProcessServiceBasic_Process_Open_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Process_SetData">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Process_SetData" message="tns:IMWSProcessServiceBasic_Process_SetData_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Process_SetDataResponse" message="tns:IMWSProcessServiceBasic_Process_SetData_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Process_Forward">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Process_Forward" message="tns:IMWSProcessServiceBasic_Process_Forward_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Process_ForwardResponse" message="tns:IMWSProcessServiceBasic_Process_Forward_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetSystemList">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetSystemList" message="tns:IMWSProcessServiceBasic_Rep_GetSystemList_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetSystemListResponse" message="tns:IMWSProcessServiceBasic_Rep_GetSystemList_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetFolderContent">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetFolderContent" message="tns:IMWSProcessServiceBasic_Rep_GetFolderContent_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetFolderContentResponse" message="tns:IMWSProcessServiceBasic_Rep_GetFolderContent_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetNavigList">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetNavigList" message="tns:IMWSProcessServiceBasic_Rep_GetNavigList_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetNavigListResponse" message="tns:IMWSProcessServiceBasic_Rep_GetNavigList_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetNavigTree">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetNavigTree" message="tns:IMWSProcessServiceBasic_Rep_GetNavigTree_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetNavigTreeResponse" message="tns:IMWSProcessServiceBasic_Rep_GetNavigTree_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetPrinters">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetPrinters" message="tns:IMWSProcessServiceBasic_Rep_GetPrinters_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetPrintersResponse" message="tns:IMWSProcessServiceBasic_Rep_GetPrinters_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetForms">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetForms" message="tns:IMWSProcessServiceBasic_Rep_GetForms_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetFormsResponse" message="tns:IMWSProcessServiceBasic_Rep_GetForms_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetSystem">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetSystem" message="tns:IMWSProcessServiceBasic_Rep_GetSystem_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetSystemResponse" message="tns:IMWSProcessServiceBasic_Rep_GetSystem_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetBinFile_Mime">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetBinFile_Mime" message="tns:IMWSProcessServiceBasic_Rep_GetBinFile_Mime_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetBinFile_MimeResponse" message="tns:IMWSProcessServiceBasic_Rep_GetBinFile_Mime_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetLookupObjects">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetLookupObjects" message="tns:IMWSProcessServiceBasic_Rep_GetLookupObjects_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetLookupObjectsResponse" message="tns:IMWSProcessServiceBasic_Rep_GetLookupObjects_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetLookupValue">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetLookupValue" message="tns:IMWSProcessServiceBasic_Rep_GetLookupValue_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetLookupValueResponse" message="tns:IMWSProcessServiceBasic_Rep_GetLookupValue_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetValueHelpDefinition">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetValueHelpDefinition" message="tns:IMWSProcessServiceBasic_Rep_GetValueHelpDefinition_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetValueHelpDefinitionResponse" message="tns:IMWSProcessServiceBasic_Rep_GetValueHelpDefinition_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetDataProviderDefinition">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetDataProviderDefinition" message="tns:IMWSProcessServiceBasic_Rep_GetDataProviderDefinition_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetDataProviderDefinitionResponse" message="tns:IMWSProcessServiceBasic_Rep_GetDataProviderDefinition_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetItemInfo">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetItemInfo" message="tns:IMWSProcessServiceBasic_Rep_GetItemInfo_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetItemInfoResponse" message="tns:IMWSProcessServiceBasic_Rep_GetItemInfo_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetItemDescription">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetItemDescription" message="tns:IMWSProcessServiceBasic_Rep_GetItemDescription_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetItemDescriptionResponse" message="tns:IMWSProcessServiceBasic_Rep_GetItemDescription_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_CreateItem">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_CreateItem" message="tns:IMWSProcessServiceBasic_Rep_CreateItem_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_CreateItemResponse" message="tns:IMWSProcessServiceBasic_Rep_CreateItem_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_LockItem">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_LockItem" message="tns:IMWSProcessServiceBasic_Rep_LockItem_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_LockItemResponse" message="tns:IMWSProcessServiceBasic_Rep_LockItem_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_UnLockItem">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_UnLockItem" message="tns:IMWSProcessServiceBasic_Rep_UnLockItem_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_UnLockItemResponse" message="tns:IMWSProcessServiceBasic_Rep_UnLockItem_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_UpdateItemBlob">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_UpdateItemBlob" message="tns:IMWSProcessServiceBasic_Rep_UpdateItemBlob_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_UpdateItemBlobResponse" message="tns:IMWSProcessServiceBasic_Rep_UpdateItemBlob_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_ReadItemBlob">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_ReadItemBlob" message="tns:IMWSProcessServiceBasic_Rep_ReadItemBlob_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_ReadItemBlobResponse" message="tns:IMWSProcessServiceBasic_Rep_ReadItemBlob_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_CreateVersion">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_CreateVersion" message="tns:IMWSProcessServiceBasic_Rep_CreateVersion_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_CreateVersionResponse" message="tns:IMWSProcessServiceBasic_Rep_CreateVersion_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Srv_GetInfo">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Srv_GetInfo" message="tns:IMWSProcessServiceBasic_Srv_GetInfo_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Srv_GetInfoResponse" message="tns:IMWSProcessServiceBasic_Srv_GetInfo_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetWordTemplate">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetWordTemplate" message="tns:IMWSProcessServiceBasic_Rep_GetWordTemplate_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetWordTemplateResponse" message="tns:IMWSProcessServiceBasic_Rep_GetWordTemplate_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Usr_GetRoles">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Usr_GetRoles" message="tns:IMWSProcessServiceBasic_Usr_GetRoles_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Usr_GetRolesResponse" message="tns:IMWSProcessServiceBasic_Usr_GetRoles_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Usr_GetUsersOfRole">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Usr_GetUsersOfRole" message="tns:IMWSProcessServiceBasic_Usr_GetUsersOfRole_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Usr_GetUsersOfRoleResponse" message="tns:IMWSProcessServiceBasic_Usr_GetUsersOfRole_OutputMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Usr_GetUsers">
+			<wsdl:input wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Usr_GetUsers" message="tns:IMWSProcessServiceBasic_Usr_GetUsers_InputMessage"/>
+			<wsdl:output wsaw:Action="http://tempuri.org/IMWSProcessServiceBasic/Usr_GetUsersResponse" message="tns:IMWSProcessServiceBasic_Usr_GetUsers_OutputMessage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="BasicHttpBinding_IMWSProcessServiceBasic" type="tns:IMWSProcessServiceBasic">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="Login">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Login" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Logout">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Logout" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Ping">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Ping" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ClearCache">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/ClearCache" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Process_Create">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Process_Create" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Process_GetList">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Process_GetList" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Process_Delete">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Process_Delete" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Process_GetLastError">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Process_GetLastError" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Process_Start">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Process_Start" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Obj_GetStructure">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Obj_GetStructure" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Obj_Toggle">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Obj_Toggle" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Doc_GetFile_Mime">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Doc_GetFile_Mime" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Doc_SetFile_Mime">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Doc_SetFile_Mime" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Obj_SetStructure">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Obj_SetStructure" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Process_Close">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Process_Close" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Process_GetInfo">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Process_GetInfo" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Process_GetTransDocsList">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Process_GetTransDocsList" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Process_Open">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Process_Open" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Process_SetData">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Process_SetData" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Process_Forward">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Process_Forward" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetSystemList">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetSystemList" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetFolderContent">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetFolderContent" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetNavigList">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetNavigList" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetNavigTree">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetNavigTree" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetPrinters">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetPrinters" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetForms">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetForms" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetSystem">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetSystem" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetBinFile_Mime">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetBinFile_Mime" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetLookupObjects">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetLookupObjects" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetLookupValue">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetLookupValue" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetValueHelpDefinition">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetValueHelpDefinition" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetDataProviderDefinition">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetDataProviderDefinition" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetItemInfo">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetItemInfo" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetItemDescription">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetItemDescription" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_CreateItem">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Rep_CreateItem" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_LockItem">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Rep_LockItem" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_UnLockItem">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Rep_UnLockItem" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_UpdateItemBlob">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Rep_UpdateItemBlob" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_ReadItemBlob">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Rep_ReadItemBlob" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_CreateVersion">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Rep_CreateVersion" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Srv_GetInfo">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Srv_GetInfo" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Rep_GetWordTemplate">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Rep_GetWordTemplate" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Usr_GetRoles">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Usr_GetRoles" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Usr_GetUsersOfRole">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Usr_GetUsersOfRole" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Usr_GetUsers">
+			<soap:operation soapAction="http://tempuri.org/IMWSProcessServiceBasic/Usr_GetUsers" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="MWSProcessServiceBasic">
+		<wsdl:port name="BasicHttpBinding_IMWSProcessServiceBasic" binding="tns:BasicHttpBinding_IMWSProcessServiceBasic">
+			<soap:address location="http://de-mucfutprt1.apps.ce.capgemini.com:8011/mwsbasic/mwsprocess"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
