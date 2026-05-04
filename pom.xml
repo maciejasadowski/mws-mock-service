@@ -22,7 +22,7 @@
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
-        <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
@@ -31,8 +31,8 @@
             <artifactId>spring-boot-starter-web-services</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>wsdl4j</groupId>
+            <artifactId>wsdl4j</artifactId>
         </dependency>
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
@@ -46,6 +46,15 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-logging</artifactId>
+        </dependency>
+        <!-- Embedded H2 database for batch adapter simulation -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -74,12 +83,16 @@
                         <id>generate-sources</id>
                         <phase>generate-sources</phase>
                         <configuration>
-                            <sourceRoot>src/main/com/capgemini/futura/mws/generated</sourceRoot>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${basedir}/src/main/resources/mwsbasic.wsdl</wsdl>
+                                    <wsdl>src/main/resources/mwsbasic.wsdl</wsdl>
+                                    <extraargs>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>com.capgemini.futura.mws.generated</extraarg>
+                                    </extraargs>
                                 </wsdlOption>
                             </wsdlOptions>
+                            <sourceRoot>${basedir}/src/main</sourceRoot>
                         </configuration>
                         <goals>
                             <goal>wsdl2java</goal>

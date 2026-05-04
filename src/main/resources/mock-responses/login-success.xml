@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mws xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="USERINFO" version="2.0">
+  <userinfo>
+    <attributes>
+      <attribute name="UserId" value="${userId}" />
+      <attribute name="UserRoleNames" value="AdminRole" />
+    </attributes>
+    <objectpermissions>
+      <objectpermission objecttype="AliasTable" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="TextDocumentCollection" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="Condition" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="DataObject" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="TextDocument" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="EMailPrinter" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="Annex" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="Envelope" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="Folder" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="Form" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="LookupTable" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="MwsProcess" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="OnBaseArchive" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="OnBaseApiArchive" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="Printer" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="OutsourcingPrinter" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="PostageDefinition" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="Process" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="Profile" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="DataProviderDefinition" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="DataObjectQuery" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="DataObjectScript" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="Role" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="RoleMapping" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="Script" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="Selection" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="StandardProcess" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="TextComponent" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="TransferJob" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="ValueHelp" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="WordTemplate" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="CustomUI" objectactionpermission="Create Read Update Delete" />
+      <objectpermission objecttype="XsdSelection" objectactionpermission="Create Read Update Delete" />
+    </objectpermissions>
+    <permissions>
+      <permission>Administrate</permission>
+      <permission>MwsLoadExternalDocumentFile</permission>
+      <permission>MwsLoadExternalBlockFile</permission>
+      <permission>MwsSetBundlePrinter</permission>
+      <permission>MwsSetDocumentPrinter</permission>
+      <permission>ChangeFolder</permission>
+      <permission>ModifyFontFace</permission>
+      <permission>ModifyFontColour</permission>
+      <permission>ModifyFontSize</permission>
+      <permission>ChangeSystem</permission>
+      <permission>ModifyFontAlignment</permission>
+      <permission>MwsClearCache</permission>
+      <permission>MwsAdministrate</permission>
+      <permission>MwsChangeFolder</permission>
+      <permission>MwsChangeSystem</permission>
+      <permission>MwsEditTextDocument</permission>
+      <permission>MwsEditTextComponent</permission>
+      <permission>MwsViewOpenEnvelope</permission>
+      <permission>MwsViewOpenJob</permission>
+      <permission>MwsViewProcess</permission>
+      <permission>MwsViewStack</permission>
+      <permission>MwsCreateDocuments</permission>
+      <permission>OdinOpenJobCreateStack</permission>
+      <permission>OdinProcessCreateStack</permission>
+      <permission>CreateReleaseVersion</permission>
+      <permission>DbAliasAdministration</permission>
+      <permission>OdinProcessDelete</permission>
+      <permission>OdinStackDelete</permission>
+      <permission>DeletedObjects</permission>
+      <permission>MwsDownloadDocument</permission>
+      <permission>OdinStackEdit</permission>
+      <permission>ExecuteModusStudio</permission>
+      <permission>ModifyFontStyleBold</permission>
+      <permission>ModifyFontStyleItalic</permission>
+      <permission>ModifyFontStyleUnderline</permission>
+      <permission>MwsManualForwardProcess</permission>
+      <permission>CommonSettings</permission>
+      <permission>MwsInsertDocument</permission>
+      <permission>MwsInsertBlock</permission>
+      <permission>MwsForwaredProcessList</permission>
+      <permission>OdinStackLock</permission>
+      <permission>LockedObjects</permission>
+      <permission>OdinImportProcedureManager</permission>
+      <permission>StudioOdinViews</permission>
+      <permission>OpenHistoricObjectVersion</permission>
+      <permission>OdinProcessSuspend</permission>
+      <permission>FinalDelete</permission>
+      <permission>MwsPrintAndArchive</permission>
+      <permission>CanPrintInPreview</permission>
+      <permission>MwsSetDocumentPrinterWizzard</permission>
+      <permission>MwsProcessList</permission>
+      <permission>MwsProcessListFromDefinedUser</permission>
+      <permission>QueryAssistant</permission>
+      <permission>OdinStackFree</permission>
+      <permission>RemoteControl</permission>
+      <permission>OdinStackEnvelopeRemove</permission>
+      <permission>OdinJobRemove</permission>
+      <permission>ReportGeneration</permission>
+      <permission>OdinProcessSetBack</permission>
+      <permission>OdinStackSetBack</permission>
+      <permission>OdinStackSetBackTo</permission>
+      <permission>OdinStackSetBackToStreaming</permission>
+      <permission>MwsDataSelection</permission>
+      <permission>MwsDocumentSaveAs</permission>
+      <permission>ScheduledTransfers</permission>
+      <permission>Search</permission>
+      <permission>OdinJobSetPrinter</permission>
+      <permission>OdinJobSetState</permission>
+      <permission>MwsShowNavigator</permission>
+      <permission>ShowNavigator</permission>
+      <permission>ShowTypeFilter</permission>
+      <permission>SynchronizeSystem</permission>
+      <permission>SystemAdministration</permission>
+      <permission>Test</permission>
+      <permission>TransferHistory</permission>
+      <permission>TransferSystem</permission>
+      <permission>OdinProcessUnlock</permission>
+      <permission>OdinStackUnlock</permission>
+      <permission>MwsCreateCommunication</permission>
+      <permission>MwsDeleteCommunication</permission>
+      <permission>WorkVersions</permission>
+    </permissions>
+  </userinfo>
+</mws>
