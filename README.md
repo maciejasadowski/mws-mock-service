@@ -1,4 +1,4 @@
-# coco-mock ? MWS Mock SOAP Service
+# coco-mock – MWS Mock SOAP Service
 
 Spring Boot mock of the `MWSProcessServiceBasic` SOAP service (MWS / CoCo).  
 Allows integration adapters to be tested locally without connecting to a real CoCo system.
@@ -36,7 +36,7 @@ The mock starts on port **8011**.
 
 ---
 
-## druckAdapter ? SOAP mock
+## druckAdapter – SOAP mock
 
 ### WSDL endpoint
 
@@ -69,9 +69,9 @@ See `MockStateStore.triggerTransientError(processId)` for details.
 
 ---
 
-## modBatchAdapter ? CoCo database mock (H2)
+## modBatchAdapter – CoCo database mock (H2)
 
-The batch adapter (`MessageWorker`) does not call MWS SOAP at all ? it inserts
+The batch adapter (`MessageWorker`) does not call MWS SOAP at all – it inserts
 processed jobs directly into the CoCo database (`AUFTRAGSEINGANG` table).  
 The mock starts an embedded H2 database containing that table and exposes it over TCP.
 
@@ -136,23 +136,23 @@ http://localhost:8011/h2-console
 
 ```
 src/main/
-??? com/capgemini/futura/mws/
-?   ??? config/
-?   ?   ??? WebServiceConfig.java            # Spring-WS configuration
-?   ?   ??? BatchDbConfig.java               # H2 datasource + TCP server (CoCo DB mock)
-?   ??? endpoint/
-?   ?   ??? MWSProcessServiceEndpoint.java   # All SOAP operations
-?   ?   ??? BatchTestDataController.java     # REST API for H2 inspection
-?   ??? state/
-?   ?   ??? MockStateStore.java              # In-memory SOAP process state
-?   ?   ??? ProcessState.java
-?   ??? MwsMockServiceApplication.java
-??? resources/
-    ??? application.yaml
-    ??? default-data.properties              # Login credentials (username/password)
-    ??? mwsbasic.wsdl
-    ??? db/
-    ?   ??? coco-out-schema.sql              # DDL for AUFTRAGSEINGANG (H2)
-    ??? mock-responses/
-        ??? login-success.xml
+├── com/capgemini/futura/mws/
+│   ├── config/
+│   │   ├── WebServiceConfig.java            # Spring-WS configuration
+│   │   └── BatchDbConfig.java               # H2 datasource + TCP server (CoCo DB mock)
+│   ├── endpoint/
+│   │   ├── MWSProcessServiceEndpoint.java   # All SOAP operations
+│   │   └── BatchTestDataController.java     # REST API for H2 inspection
+│   ├── state/
+│   │   ├── MockStateStore.java              # In-memory SOAP process state
+│   │   └── ProcessState.java
+│   └── MwsMockServiceApplication.java
+└── resources/
+    ├── application.yaml
+    ├── default-data.properties              # Login credentials (username/password)
+    ├── mwsbasic.wsdl
+    ├── db/
+    │   └── coco-out-schema.sql              # DDL for AUFTRAGSEINGANG (H2)
+    └── mock-responses/
+        └── login-success.xml
 ```
